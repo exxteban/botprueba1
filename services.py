@@ -180,7 +180,7 @@ def get_media_id(media_name, media_type):
         media_id = sett.videos.get(media_name, None)
     elif media_type == "audio":
         media_id = sett.audio.get(media_name, None)
-    return media_id
+    return media_id #en el otro se comenta casi todo
 
 
 def replyReaction_Message(number, messageId, emoji):
@@ -236,9 +236,9 @@ def administrar_chatbot(text, number, messageId, name):
     time.sleep(2)
 
     if "hola" in text:
-        body = "¡Hola! 👋 Bienvenido a Bigdateros. ¿Cómo podemos ayudarte hoy?"
-        footer = "Equipo Bigdateros"
-        options = ["✅ servicios", "📅 agendar cita"]
+        body = "¡Hola! 👋 Bienvenido a Bacon Burguers. ¿Cómo podemos ayudarte hoy?"
+        footer = "Team Bacon"
+        options = ["✅ Menu", "📅 Promociones"]
 
         replyButtonData = buttonReply_Message(
             number, options, body, footer, "sed1", messageId)
