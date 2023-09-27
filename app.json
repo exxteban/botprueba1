@@ -1,0 +1,12 @@
+{
+    "name": "nombre-de-tu-aplicacion",
+    "description": "Descripción de tu aplicación",
+    "env": {
+        "FLASK_ENV": "production"
+    },
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ]
+}
