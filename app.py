@@ -1,7 +1,7 @@
 from flask import Flask, request
 import sett
 import services
-
+from sett import openai_key
 app = Flask(__name__)
 
 
@@ -16,12 +16,12 @@ def verificar_token():
         token = request.args.get('hub.verify_token')
         challenge = request.args.get('hub.challenge')
 
-        if token == sett.token and challenge != None:
+        if token == sett.token and challenge is not None:
             return challenge
         else:
-            return 'token incorrecto', 403
+            return 'Token incorrecto', 403
     except Exception as e:
-        return e, 403
+        return str(e), 403
 
 
 @app.route('/webhook', methods=['POST'])
@@ -39,11 +39,11 @@ def recibir_mensajes():
         text = services.obtener_Mensaje_whatsapp(message)
 
         services.administrar_chatbot(text, number, messageId, name)
-        return 'enviado'
+        return 'Enviado'
 
     except Exception as e:
-        return 'no enviado ' + str(e)
+        return 'No enviado ' + str(e)
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=5000)

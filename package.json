@@ -1,0 +1,5 @@
+"engines": {
+  "node": "12.x",
+  "npm": "6.x",
+  "python": "3.8"
+}

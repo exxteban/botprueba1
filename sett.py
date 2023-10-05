@@ -22,4 +22,4 @@ stickers = {
 
 document_url = "https://www.africau.edu/images/default/sample.pdf"
 
-openai_key = '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'
+openai_key = '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'
